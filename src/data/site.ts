@@ -164,7 +164,7 @@ export interface Project {
   name: string;
   body: string;
   stars?: number;
-  link?: { label: string; href: string };
+  links: { label: string; href: string }[];
 }
 
 export const openSource = {
@@ -174,11 +174,15 @@ export const openSource = {
       name: 'Occurify',
       stars,
       body: 'A .NET library for scheduling and transforming timelines. 4500+ unit tests.',
-      link: { label: 'github.com/Occurify/Occurify', href: 'https://github.com/Occurify/Occurify' },
+      links: [{ label: 'github.com/Occurify/Occurify', href: 'https://github.com/Occurify/Occurify' }],
     },
     {
       name: 'CodeCasa',
       body: 'The .NET libraries that run my smart home, built on NetDaemon. I also contribute to NetDaemon itself.',
+      links: [
+        { label: 'github.com/DevJasperNL/CodeCasa', href: 'https://github.com/DevJasperNL/CodeCasa' },
+        { label: 'github.com/DevJasperNL/CodeCasa.Showcase', href: 'https://github.com/DevJasperNL/CodeCasa.Showcase' },
+      ],
     },
   ] as Project[],
   all: { label: 'All on GitHub', href: links.gitHub },

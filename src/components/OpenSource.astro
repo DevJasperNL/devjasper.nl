@@ -22,11 +22,15 @@ import SectionHeading from './SectionHeading.astro';
             )}
           </h3>
           <p class="mt-4 text-lg leading-relaxed text-muted">{p.body}</p>
-          {p.link && (
-            <ArrowLink href={p.link.href} class="mt-auto pt-6 text-accent">
-              {p.link.label}
-            </ArrowLink>
-          )}
+          <ul class="mt-auto space-y-2 pt-6">
+            {p.links.map((l) => (
+              <li>
+                <ArrowLink href={l.href} class="text-accent wrap-anywhere">
+                  {l.label.split('/').map((part, i) => (i > 0 ? <Fragment>/<wbr />{part}</Fragment> : part))}
+                </ArrowLink>
+              </li>
+            ))}
+          </ul>
         </li>
       ))
     }
