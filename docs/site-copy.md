@@ -39,13 +39,13 @@ Shuttles and lifts at Vanderlande, PTZ cameras and video mixers at NMS. Real-tim
 **One login, from WebForms to .NET 8**
 - Problem: DAF moved its portals onto a new identity platform. The apps behind them ran on everything from WebForms 4.8 to .NET 8.
 - I did: with the team, built integration libraries for each .NET version, connected 6+ tech stacks through OIDC or SAML, and built a SCIM adapter that keeps the new platform and the legacy systems in sync.
-- Result: old and new apps behind one login. [TODO: number of portals or users, if available]
+- Result: old and new apps behind one login.
 
 ### Vanderlande · 2015 to 2022
 **Testing warehouse robots without the robots**
 - Problem: ADAPTO's shuttles and lifts are run by software, but developers and testers can't each have a warehouse on their desk.
 - I did: designed and led the ADAPTO Emulation Environment, and coordinated the integration with the shuttle team in Siegen, Germany. Later, tech lead of a team of 6 on STOREPICK (Java, Kafka, Kubernetes).
-- Result: developers, testers and integration engineers run the real system software with no physical hardware. [TODO: number of users or time saved, if available]
+- Result: developers, testers and integration engineers run the real system software with no physical hardware.
 
 Earlier: SeaChange International (video on demand), SPS BV (warehouse management), TNO Automotive (PreScan), Memoria Media.
 
@@ -101,7 +101,7 @@ All on GitHub → github.com/DevJasperNL
 
 ## 7. Contact
 
-**Heading:** Old and new, not getting along?
+**Heading:** New or old, let's talk about it.
 
 Tell me about your system and where it hurts. I'm available from {availability}.
 
@@ -122,7 +122,7 @@ LinkedIn · GitHub
 - OG title: Jasper Lammers, freelance senior .NET engineer
 - OG description: Building something new? Stuck with something old? Senior .NET engineer, freelance, 15 years.
 - Photo alt: Jasper Lammers, smiling, in a blue blazer
-- Footer: © {year} Jasper Lammers · jasper@devjasper.nl · LinkedIn · GitHub · No cookies, no trackers. · [TODO: KvK number]
+- Footer: © {year} Jasper Lammers · jasper@devjasper.nl · LinkedIn · GitHub · No cookies, no trackers. · KvK 86591800
 - 404 title: Page not found | Jasper Lammers
 - 404 heading: This page doesn't exist.
 - 404 body: Maybe it moved, maybe it never was. Everything worth seeing is on the home page.
