@@ -10,7 +10,7 @@ Hi, I'm Jasper.
 
 **Headline:** Building something new? Stuck with something old?
 
-Yes, I can help. Senior .NET engineer, freelance, 15 years. Legacy WCF to the newest Blazor, at Vanderlande, DAF and New Media Systems.
+Yes, I can help. Senior .NET engineer, freelance, 15 years. I get up to speed fast, build alongside your team, and make sure the knowledge stays when I go.
 
 Available from {availability}
 
@@ -73,14 +73,14 @@ Link: More recommendations on LinkedIn →
 
 ## 5. How I work
 
-**I get up to speed fast**
+**I learn your system quickly**
 Warehouse robots, identity, live video: new domain every time. I read the code and ask the awkward questions early, so I'm useful soon.
 
 **I leave the knowledge behind**
 Clear docs, careful reviews, and time for the developers who stay. When I leave, you shouldn't notice a gap.
 
 **I build what you need**
-I lay out options with pros and cons and pick the simplest one that holds. Then I build it myself.
+I lay out options with pros and cons and pick the simplest one that holds. Then I help build it.
 
 I use Claude Code every day to deliver faster, and I can help your team do the same without the hype.
 
