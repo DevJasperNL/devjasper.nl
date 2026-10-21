@@ -152,3 +152,6 @@ vite.config.ts.timestamp-*
 .DS_Store
 .idea/
 .vs/
+
+# Local working files
+_input/
