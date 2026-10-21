@@ -41,11 +41,14 @@ Always run `npm run build` (and `npm run check` if available) before considering
 │   ├── pages/           # File-based routing; each file = one URL
 │   └── styles/
 │       └── global.css   # @import "tailwindcss"; plus @theme design tokens
+├── archive/             # Design history, outside the build
 ├── astro.config.mjs
 ├── tsconfig.json
 ├── .nvmrc
 └── CLAUDE.md
 ```
+
+`archive/` holds design history; never import from it or modify it unless asked.
 
 ## Conventions
 
@@ -58,6 +61,17 @@ Always run `npm run build` (and `npm run check` if available) before considering
 - Fonts: self-host (e.g. Fontsource) rather than loading from third-party CDNs.
 - Keep dependencies minimal. Ask before adding a new package.
 - Writing style for site copy: do not use em dashes.
+
+## Design system
+
+The full spec is `docs/design.md`; follow it strictly. Copy lives in `src/data/site.ts` and must match `docs/site-copy.md`.
+
+- **Look:** clean white page, blazer blue as the accent (headings, buttons, links, borders, availability band, quote cards, contact panel). Never a blue hero panel. Light only, no dark mode.
+- **Fonts:** Figtree Variable for display (headings, labels, buttons), Source Sans 3 Variable for body. No other fonts.
+- **Tokens:** `bg`, `ink`, `muted`, `accent`, `accent-deep`, `tint` in `@theme`. No other colours; no arbitrary hex values in components.
+- **Layout:** `max-w-6xl` column, gutters `px-5` / `md:px-12`, sections `py-20` / `md:py-28`, white and tint sections alternate.
+- **Components:** pill buttons, `rounded-[1.75rem]` cards with a 2px accent border, visible `focus-visible` outlines everywhere.
+- **Motion:** CSS only, always inside `prefers-reduced-motion: no-preference`, content visible without it.
 
 ## Build and deploy
 

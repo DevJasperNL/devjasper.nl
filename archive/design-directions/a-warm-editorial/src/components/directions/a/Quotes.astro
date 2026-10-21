@@ -1,0 +1,44 @@
+---
+import { linkedInRecommendations, quotes } from '../../../data/site';
+
+const [featured, ...rest] = quotes;
+---
+
+<section aria-labelledby="a-quotes" class="mx-auto max-w-6xl px-6 py-20 md:px-10 md:py-28">
+  <h2 id="a-quotes" class="font-display a-display text-4xl font-bold md:text-5xl">What colleagues say</h2>
+
+  <figure class="a-reveal mt-14 max-w-4xl">
+    <span class="block font-display text-7xl leading-none text-spark md:text-8xl" aria-hidden="true">&ldquo;</span>
+    <blockquote class="-mt-6 font-display a-quote text-3xl leading-snug font-medium md:-mt-8 md:text-[2.75rem]">
+      {featured.text}
+    </blockquote>
+    <figcaption class="mt-6 text-lg">
+      <span class="font-semibold">{featured.name}</span>, <span class="text-muted">{featured.role}</span>
+      {featured.translated && <span class="text-muted italic"> (Translated from Dutch)</span>}
+    </figcaption>
+  </figure>
+
+  <div class="mt-16 grid gap-10 border-t border-rule pt-12 md:grid-cols-3 md:gap-12">
+    {
+      rest.map((q) => (
+        <figure class="a-reveal">
+          <blockquote class="font-display a-quote text-xl leading-snug">
+            <span class="text-spark" aria-hidden="true">&ldquo;</span>
+            {q.text}
+            <span class="text-spark" aria-hidden="true">&rdquo;</span>
+          </blockquote>
+          <figcaption class="mt-4 text-base">
+            <span class="font-semibold">{q.name}</span>, <span class="text-muted">{q.role}</span>
+          </figcaption>
+        </figure>
+      ))
+    }
+  </div>
+
+  <a
+    href={linkedInRecommendations.href}
+    class="mt-12 inline-block font-semibold text-accent underline decoration-accent/30 underline-offset-4 transition-colors hover:decoration-accent"
+  >
+    {linkedInRecommendations.label} <span aria-hidden="true">&rarr;</span>
+  </a>
+</section>

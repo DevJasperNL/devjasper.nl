@@ -1,0 +1,40 @@
+---
+import { openSource } from '../data/site';
+import ArrowLink from './ArrowLink.astro';
+import SectionHeading from './SectionHeading.astro';
+---
+
+<section id="open-source" aria-labelledby="open-source-heading" class="mx-auto max-w-6xl px-5 py-20 md:px-12 md:py-28">
+  <SectionHeading id="open-source-heading">Open source</SectionHeading>
+  <p class="mt-6 font-display text-2xl leading-snug font-bold md:text-3xl">{openSource.lead}</p>
+
+  <ul class="mt-12 grid gap-8 md:grid-cols-2">
+    {
+      openSource.projects.map((p) => (
+        <li class="reveal flex flex-col rounded-[1.75rem] border-2 border-accent p-7 md:p-10">
+          <h3 class="flex flex-wrap items-baseline gap-x-4 gap-y-1 font-display text-3xl font-black tracking-tight">
+            {p.name}
+            {p.stars !== undefined && (
+              <span class="rounded-full bg-tint px-3 py-1 text-base font-bold text-accent">
+                <span aria-hidden="true">&#9733;</span> {p.stars}
+                <span class="sr-only"> stars on GitHub</span>
+              </span>
+            )}
+          </h3>
+          <p class="mt-4 text-lg leading-relaxed text-muted">{p.body}</p>
+          <ul class="mt-auto space-y-2 pt-6">
+            {p.links.map((l) => (
+              <li>
+                <ArrowLink href={l.href} class="text-accent wrap-anywhere">
+                  {l.label.split('/').map((part, i) => (i > 0 ? <Fragment>/<wbr />{part}</Fragment> : part))}
+                </ArrowLink>
+              </li>
+            ))}
+          </ul>
+        </li>
+      ))
+    }
+  </ul>
+
+  <ArrowLink href={openSource.all.href} class="mt-10 text-accent">{openSource.all.label}</ArrowLink>
+</section>

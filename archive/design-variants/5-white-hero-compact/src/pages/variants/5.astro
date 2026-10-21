@@ -1,0 +1,21 @@
+---
+import '@fontsource-variable/figtree';
+import '@fontsource-variable/source-sans-3';
+import '../../styles/directions/d.css';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Hero from '../../components/variants/2/Hero.astro';
+import WhatIDo from '../../components/variants/4/WhatIDo.astro';
+import Work from '../../components/variants/4/Work.astro';
+import Quotes from '../../components/variants/4/Quotes.astro';
+---
+
+<BaseLayout title="Variant 5: White hero, compact proof" description="Variant 5 of design direction D" noindex>
+  <div class="dir-d var-5 min-h-screen bg-bg font-body text-ink">
+    <Hero />
+    <main>
+      <WhatIDo />
+      <Work />
+      <Quotes />
+    </main>
+  </div>
+</BaseLayout>

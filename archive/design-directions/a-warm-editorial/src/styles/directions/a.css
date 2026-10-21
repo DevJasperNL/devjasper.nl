@@ -1,0 +1,88 @@
+.dir-a {
+  --color-bg: #fbf8f3;
+  --color-ink: #1b2430;
+  --color-muted: #4b5563;
+  --color-accent: #2b5ba8;
+  --color-accent-deep: #1e3f78;
+  --color-tint: #e9eff8;
+  --color-rule: #e4ded3;
+  --color-spark: #b5452f;
+
+  --font-display: 'Fraunces Variable', Georgia, serif;
+  --font-body: 'Source Sans 3 Variable', system-ui, sans-serif;
+
+  --art-line: #2b5ba8;
+  --art-fill: #e9eff8;
+  --art-pop: #b5452f;
+}
+
+.dir-a .a-display {
+  font-variation-settings: 'SOFT' 100, 'WONK' 1, 'opsz' 144;
+}
+
+.dir-a .a-quote {
+  font-variation-settings: 'SOFT' 50, 'WONK' 0, 'opsz' 72;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .dir-a .a-rise {
+    animation: a-rise 900ms cubic-bezier(0.2, 0.7, 0.2, 1) both;
+    animation-delay: calc(var(--d, 0) * 120ms + 100ms);
+  }
+
+  .dir-a .a-photo {
+    animation: a-photo 1200ms cubic-bezier(0.2, 0.7, 0.2, 1) 200ms both;
+  }
+
+  .dir-a .work-art .art-pan {
+    animation: a-pan 6s ease-in-out infinite;
+  }
+
+  @supports (animation-timeline: view()) {
+    .dir-a .a-reveal {
+      animation: a-rise linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 45%;
+    }
+
+    .dir-a .a-rule {
+      transform-origin: left;
+      animation: a-draw linear both;
+      animation-timeline: view();
+      animation-range: entry 10% entry 70%;
+    }
+  }
+}
+
+@keyframes a-rise {
+  from {
+    opacity: 0;
+    transform: translateY(0.6em);
+  }
+}
+
+@keyframes a-photo {
+  from {
+    opacity: 0;
+    clip-path: inset(100% 0 0 0 round 999px 999px 0 0);
+  }
+  to {
+    clip-path: inset(0 0 0 0 round 999px 999px 0 0);
+  }
+}
+
+@keyframes a-draw {
+  from {
+    transform: scaleX(0);
+  }
+}
+
+@keyframes a-pan {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(6px);
+  }
+}

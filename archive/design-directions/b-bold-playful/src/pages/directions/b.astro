@@ -1,0 +1,21 @@
+---
+import '@fontsource-variable/bricolage-grotesque/standard.css';
+import '@fontsource-variable/figtree';
+import '../../styles/directions/b.css';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Hero from '../../components/directions/b/Hero.astro';
+import WhatIDo from '../../components/directions/b/WhatIDo.astro';
+import Work from '../../components/directions/b/Work.astro';
+import Quotes from '../../components/directions/b/Quotes.astro';
+---
+
+<BaseLayout title="Direction B: Bold and playful" description="Design direction B for devjasper.nl" noindex>
+  <div class="dir-b min-h-screen overflow-x-clip bg-bg font-body text-ink">
+    <Hero />
+    <main>
+      <WhatIDo />
+      <Work />
+      <Quotes />
+    </main>
+  </div>
+</BaseLayout>

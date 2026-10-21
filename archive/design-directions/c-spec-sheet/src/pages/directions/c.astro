@@ -1,0 +1,24 @@
+---
+import '@fontsource-variable/schibsted-grotesk';
+import '@fontsource/ibm-plex-sans/400.css';
+import '@fontsource/ibm-plex-sans/600.css';
+import '@fontsource/ibm-plex-mono/400.css';
+import '@fontsource/ibm-plex-mono/500.css';
+import '../../styles/directions/c.css';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Hero from '../../components/directions/c/Hero.astro';
+import WhatIDo from '../../components/directions/c/WhatIDo.astro';
+import Work from '../../components/directions/c/Work.astro';
+import Quotes from '../../components/directions/c/Quotes.astro';
+---
+
+<BaseLayout title="Direction C: Engineering spec sheet" description="Design direction C for devjasper.nl" noindex>
+  <div class="dir-c isolate min-h-screen bg-bg font-body text-ink">
+    <Hero />
+    <main>
+      <WhatIDo />
+      <Work />
+      <Quotes />
+    </main>
+  </div>
+</BaseLayout>

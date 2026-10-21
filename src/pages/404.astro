@@ -1,0 +1,17 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Button from '../components/Button.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+import { notFound } from '../data/site';
+---
+
+<BaseLayout title={notFound.title} description={notFound.body} noindex>
+  <SiteHeader />
+  <main id="main" class="mx-auto max-w-6xl px-5 py-24 md:px-12 md:py-36">
+    <h1 class="font-display text-[2.7rem] leading-[1.02] font-black tracking-tight text-accent md:text-6xl lg:text-7xl">{notFound.heading}</h1>
+    <p class="mt-8 max-w-[34rem] text-lg leading-relaxed text-muted md:text-xl">{notFound.body}</p>
+    <Button href="/" class="mt-10">{notFound.button}</Button>
+  </main>
+  <SiteFooter />
+</BaseLayout>

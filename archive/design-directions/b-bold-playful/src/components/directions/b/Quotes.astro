@@ -1,0 +1,44 @@
+---
+import { linkedInRecommendations, quotes } from '../../../data/site';
+
+const tilts = ['md:-rotate-1', 'md:rotate-1', 'md:rotate-[0.5deg]', 'md:-rotate-[0.75deg]'];
+---
+
+<section aria-labelledby="b-quotes" class="bg-accent text-white">
+  <div class="mx-auto max-w-7xl px-5 py-20 md:px-10 md:py-28">
+    <h2 id="b-quotes" class="font-display b-display text-5xl font-extrabold tracking-tight md:text-7xl">
+      What colleagues say
+    </h2>
+
+    <div class="mt-12 grid gap-8 md:grid-cols-2 md:gap-10">
+      {
+        quotes.map((q, i) => (
+          <figure class:list={['b-reveal b-card relative rounded-3xl border-2 border-ink bg-white p-7 text-ink md:p-9', tilts[i]]}>
+            <blockquote class="font-display b-display text-2xl leading-snug font-semibold md:text-[1.7rem]">
+              &ldquo;{q.text}&rdquo;
+            </blockquote>
+            <figcaption class="mt-6 flex items-center gap-3">
+              <span
+                class="flex size-11 shrink-0 items-center justify-center rounded-full border-2 border-ink bg-marker font-display font-extrabold"
+                aria-hidden="true"
+              >
+                {q.name.split(' ').map((n) => n[0]).join('')}
+              </span>
+              <span class="text-base leading-snug">
+                <span class="font-bold">{q.name}</span>, {q.role}
+                {q.translated && <span class="text-muted"> (Translated from Dutch)</span>}
+              </span>
+            </figcaption>
+          </figure>
+        ))
+      }
+    </div>
+
+    <a
+      href={linkedInRecommendations.href}
+      class="mt-12 inline-flex items-center gap-2 rounded-xl border-2 border-ink bg-marker px-5 py-3 font-bold text-ink transition-transform hover:-translate-y-0.5 focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-white"
+    >
+      {linkedInRecommendations.label} <span aria-hidden="true">&rarr;</span>
+    </a>
+  </div>
+</section>

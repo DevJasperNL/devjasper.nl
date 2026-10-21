@@ -1,0 +1,46 @@
+---
+import { Picture } from 'astro:assets';
+import photo from '../assets/jasper.png';
+import { availability, hero, mailto } from '../data/site';
+import Button from './Button.astro';
+---
+
+<section id="top" aria-labelledby="hero-heading" class="mx-auto grid max-w-6xl items-center gap-12 px-5 pt-6 pb-16 md:grid-cols-[1.3fr_1fr] md:px-12 md:pt-10 md:pb-24">
+  <div>
+    <p class="font-display text-2xl font-semibold md:text-3xl">
+      <span class="rise-line" style="--d: 0">{hero.greeting}</span>
+    </p>
+    <h1 id="hero-heading" class="mt-4 font-display text-[2.7rem] leading-[1.02] font-black tracking-tight text-accent md:text-6xl lg:text-7xl">
+      {hero.headline.map((line, i) => <span class="rise-line" style={`--d: ${i + 1}`}>{line}</span>)}
+    </h1>
+    <p class="rise mt-8 max-w-[34rem] text-lg leading-relaxed text-muted md:text-xl" style="--d: 3">
+      {hero.intro}
+    </p>
+    <div class="rise mt-10" style="--d: 4">
+      <Button href={mailto}>Email me</Button>
+    </div>
+  </div>
+
+  <div class="rise-photo relative mx-auto w-full max-w-[20rem] md:max-w-[26rem]">
+    <div class="absolute inset-x-0 bottom-0 h-[85%] rounded-t-full bg-tint" aria-hidden="true"></div>
+    <Picture
+      src={photo}
+      alt={hero.photoAlt}
+      formats={['avif', 'webp']}
+      fallbackFormat="jpg"
+      width={900}
+      widths={[320, 480, 640, 900]}
+      sizes="(min-width: 768px) 23rem, 18rem"
+      loading="eager"
+      fetchpriority="high"
+      class="relative mx-auto aspect-[4/5] w-[88%] rounded-t-full object-cover object-[50%_20%]"
+    />
+  </div>
+</section>
+
+<div class="bg-accent text-white">
+  <p class="mx-auto flex max-w-6xl items-center gap-3 px-5 py-4 font-display font-bold md:px-12">
+    <span class="size-2.5 rounded-full bg-white ring-4 ring-white/25" aria-hidden="true"></span>
+    Available from {availability}
+  </p>
+</div>

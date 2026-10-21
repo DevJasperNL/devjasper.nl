@@ -1,0 +1,27 @@
+---
+import { services } from '../../../data/site';
+
+const numerals = ['i.', 'ii.', 'iii.'];
+---
+
+<section aria-labelledby="a-what" class="mx-auto max-w-6xl px-6 py-20 md:px-10 md:py-28">
+  <div class="a-rule h-px bg-rule"></div>
+  <div class="mt-12 grid gap-10 md:grid-cols-[1fr_2fr] md:gap-16">
+    <h2 id="a-what" class="font-display a-display text-4xl font-bold md:sticky md:top-10 md:self-start md:text-5xl">
+      What I do
+    </h2>
+    <ol class="space-y-12">
+      {
+        services.map((s, i) => (
+          <li class="a-reveal grid grid-cols-[2.5rem_1fr] gap-x-4">
+            <span class="font-display text-2xl italic text-spark" aria-hidden="true">{numerals[i]}</span>
+            <div>
+              <h3 class="font-display a-display text-2xl font-semibold md:text-3xl">{s.title}</h3>
+              <p class="mt-3 max-w-[36rem] text-lg leading-relaxed text-muted">{s.body}</p>
+            </div>
+          </li>
+        ))
+      }
+    </ol>
+  </div>
+</section>

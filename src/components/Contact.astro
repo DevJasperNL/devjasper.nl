@@ -1,0 +1,31 @@
+---
+import { contact, email, links, mailto } from '../data/site';
+import ArrowLink from './ArrowLink.astro';
+import Button from './Button.astro';
+import SectionHeading from './SectionHeading.astro';
+---
+
+<section id="contact" aria-labelledby="contact-heading" class="mx-auto max-w-6xl px-2 pb-20 md:px-12 md:pb-28">
+  <div class="on-accent rounded-[1.75rem] bg-accent px-5 py-14 text-white md:rounded-[2.5rem] md:px-16 md:py-20">
+    <SectionHeading id="contact-heading" class="max-w-3xl text-white">{contact.heading}</SectionHeading>
+    <p class="mt-6 max-w-2xl text-lg leading-relaxed text-white/90 md:text-xl">{contact.body}</p>
+
+    <div class="mt-10 flex flex-wrap items-center gap-x-8 gap-y-5">
+      <Button href={mailto} variant="inverse">Email me</Button>
+      <a href={mailto} class="font-display text-lg font-bold underline decoration-white/50 decoration-2 underline-offset-4 hover:decoration-white">
+        {email}
+      </a>
+    </div>
+
+    <p class="mt-12 text-lg">
+      {contact.cvPrompt}
+      <ArrowLink href={contact.cvHref} class="ml-1">{contact.cvLabel}</ArrowLink>
+    </p>
+
+    <p class="mt-6 flex gap-3 font-display text-lg font-bold">
+      <a href={links.linkedIn} class="underline decoration-2 underline-offset-4">LinkedIn</a>
+      <span aria-hidden="true">&middot;</span>
+      <a href={links.gitHub} class="underline decoration-2 underline-offset-4">GitHub</a>
+    </p>
+  </div>
+</section>

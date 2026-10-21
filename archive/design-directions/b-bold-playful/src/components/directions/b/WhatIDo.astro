@@ -1,0 +1,27 @@
+---
+import { services } from '../../../data/site';
+---
+
+<section aria-labelledby="b-what" class="bg-tint">
+  <div class="mx-auto max-w-7xl px-5 py-20 md:px-10 md:py-28">
+    <h2 id="b-what" class="font-display b-display text-5xl font-extrabold tracking-tight md:text-7xl">
+      What I <span class="b-marker">do</span>
+    </h2>
+    <ol class="mt-12 divide-y-2 divide-ink border-y-2 border-ink">
+      {
+        services.map((s, i) => (
+          <li class="b-reveal group grid gap-3 py-8 md:grid-cols-[8rem_1fr_1.4fr] md:items-baseline md:gap-10 md:py-10">
+            <span
+              class="font-display b-display text-6xl leading-none font-extrabold text-accent transition-transform duration-300 group-hover:-rotate-6 md:text-8xl"
+              aria-hidden="true"
+            >
+              {i + 1}
+            </span>
+            <h3 class="font-display b-display text-3xl font-bold md:text-4xl">{s.title}</h3>
+            <p class="text-lg leading-relaxed text-muted">{s.body}</p>
+          </li>
+        ))
+      }
+    </ol>
+  </div>
+</section>

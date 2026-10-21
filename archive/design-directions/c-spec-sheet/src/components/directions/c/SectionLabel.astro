@@ -1,0 +1,17 @@
+---
+interface Props {
+  index: string;
+  id: string;
+  title: string;
+}
+
+const { index, id, title } = Astro.props;
+---
+
+<div class="border-t border-ink">
+  <div class="c-scroll-rule -mt-px h-0.5 w-24 bg-spark"></div>
+  <h2 id={id} class="mt-6 flex items-baseline gap-4 font-display text-4xl font-extrabold tracking-tight md:text-5xl">
+    <span class="font-mono text-base font-medium tracking-normal text-muted">{index} /</span>
+    {title}
+  </h2>
+</div>

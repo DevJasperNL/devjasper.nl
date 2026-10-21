@@ -1,6 +1,198 @@
 @import "tailwindcss";
 
-@theme {
-  --color-ink: #1f2933;
-  --color-accent: #0f766e;
+/* Design history and docs mention classes that the site does not use. */
+@source not "../../archive";
+@source not "../../docs";
+
+/* The full palette; see docs/design.md. `static` keeps every token available as a CSS variable for the SVG art. */
+@theme static {
+  --color-bg: #ffffff;
+  --color-ink: #1b2430;
+  --color-muted: #4a5464;
+  --color-accent: #2b5ba8;
+  --color-accent-deep: #234c8f;
+  --color-tint: #eef3fa;
+
+  --font-display: 'Figtree Variable', system-ui, sans-serif;
+  --font-body: 'Source Sans 3 Variable', system-ui, sans-serif;
+}
+
+@layer base {
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 3px;
+  }
+
+  /* Blue panels (quote cards, availability band, contact) need a white ring. */
+  .on-accent :focus-visible {
+    outline-color: var(--color-bg);
+  }
+}
+
+/*
+  Swipe row on phones, 2x2 grid from md up. The padding lines the first card (and the
+  grid) up with the max-w-6xl content column.
+*/
+.quote-row {
+  --gutter: max(1.25rem, calc((100% - 72rem) / 2 + 1.25rem));
+  padding-inline: var(--gutter);
+  scroll-padding-inline: var(--gutter);
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-accent) var(--color-tint);
+}
+
+@media (min-width: 48rem) {
+  .quote-row {
+    --gutter: max(3rem, calc((100% - 72rem) / 2 + 3rem));
+  }
+}
+
+.rise-line {
+  display: block;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  .rise-line {
+    animation: rise-line 800ms cubic-bezier(0.2, 0.9, 0.25, 1.15) both;
+    animation-delay: calc(var(--d, 0) * 110ms + 150ms);
+  }
+
+  .rise {
+    animation: rise 700ms ease-out both;
+    animation-delay: calc(var(--d, 0) * 110ms + 150ms);
+  }
+
+  .rise-photo {
+    animation: rise-photo 1000ms cubic-bezier(0.2, 0.9, 0.25, 1.1) 350ms both;
+  }
+
+  .lift {
+    transition: transform 250ms cubic-bezier(0.2, 0.9, 0.25, 1.3);
+  }
+
+  .lift:hover {
+    transform: translateY(-4px);
+  }
+
+  .arrow {
+    display: inline-block;
+    transition: transform 200ms;
+  }
+
+  a:hover .arrow {
+    transform: translateX(4px);
+  }
+
+  .work-art .art-pan {
+    animation: art-pan 3s ease-in-out infinite;
+  }
+
+  .work-art .art-wave {
+    animation: art-pulse 1.8s ease-in-out infinite;
+  }
+
+  .work-art .art-wave-2 {
+    animation-delay: 200ms;
+  }
+
+  .work-art .art-wave-3 {
+    animation-delay: 400ms;
+  }
+
+  .work-art .art-shackle {
+    animation: art-shackle 3s ease-in-out infinite;
+  }
+
+  .work-art .art-lift {
+    animation: art-lift 4s ease-in-out infinite;
+  }
+
+  .work-art .art-shuttle {
+    animation: art-shuttle 3.2s ease-in-out infinite;
+  }
+
+  @supports (animation-timeline: view()) {
+    .reveal {
+      animation: rise linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 40%;
+    }
+
+    .grow-in {
+      transform-origin: left;
+      animation: grow-in linear both;
+      animation-timeline: view();
+      animation-range: entry 20% cover 45%;
+    }
+  }
+}
+
+@keyframes rise-line {
+  from {
+    opacity: 0;
+    transform: translateY(0.7em);
+  }
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+}
+
+@keyframes rise-photo {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+}
+
+@keyframes grow-in {
+  from {
+    transform: scaleX(0);
+  }
+}
+
+@keyframes art-pan {
+  0%,
+  100% {
+    transform: translateX(-5px);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+}
+
+@keyframes art-pulse {
+  50% {
+    opacity: 0.2;
+  }
+}
+
+@keyframes art-shackle {
+  0%,
+  70%,
+  100% {
+    transform: translateY(0);
+  }
+  80% {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes art-lift {
+  50% {
+    transform: translateY(84px);
+  }
+}
+
+@keyframes art-shuttle {
+  50% {
+    transform: translateX(10px);
+  }
 }

@@ -1,0 +1,21 @@
+---
+import { email, footer, links, mailto } from '../data/site';
+
+const year = new Date().getFullYear();
+---
+
+<footer class="border-t border-accent/20">
+  <p class="mx-auto flex max-w-6xl flex-col items-start gap-x-3 gap-y-2 px-5 py-10 text-muted md:flex-row md:flex-wrap md:px-12">
+    <span>&copy; {year} {footer.name}</span>
+    <span class="hidden md:inline" aria-hidden="true">&middot;</span>
+    <a href={mailto} class="underline-offset-4 hover:text-accent hover:underline">{email}</a>
+    <span class="hidden md:inline" aria-hidden="true">&middot;</span>
+    <a href={links.linkedIn} class="underline-offset-4 hover:text-accent hover:underline">LinkedIn</a>
+    <span class="hidden md:inline" aria-hidden="true">&middot;</span>
+    <a href={links.gitHub} class="underline-offset-4 hover:text-accent hover:underline">GitHub</a>
+    <span class="hidden md:inline" aria-hidden="true">&middot;</span>
+    <span>{footer.privacy}</span>
+    <span class="hidden md:inline" aria-hidden="true">&middot;</span>
+    <span>{footer.kvk}</span>
+  </p>
+</footer>

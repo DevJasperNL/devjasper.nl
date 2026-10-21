@@ -1,0 +1,42 @@
+---
+import { earlierWork, work } from '../../../data/site';
+import WorkArt from '../../directions/WorkArt.astro';
+---
+
+<section aria-labelledby="v4-work" class="mx-auto max-w-6xl px-5 md:px-12">
+  <div class="border-t-2 border-accent pt-12 pb-12 md:pt-14">
+    <h2 id="v4-work" class="font-display text-3xl font-black tracking-tight text-accent md:text-5xl">Selected work</h2>
+
+    <div class="mt-8 grid gap-6 lg:grid-cols-3">
+      {
+        work.map((item) => (
+          <article class="d-reveal flex flex-col rounded-[1.5rem] border-2 border-accent bg-white p-6">
+            <div class="rounded-xl bg-tint px-6 py-4">
+              <WorkArt art={item.art} class="mx-auto w-full max-w-[12rem]" />
+            </div>
+            <p class="mt-5 font-display text-sm font-bold tracking-wide text-accent uppercase">
+              {item.client} &middot; {item.period}
+            </p>
+            <h3 class="mt-2 font-display text-2xl leading-tight font-black tracking-tight">{item.title}</h3>
+            <dl class="mt-4 space-y-3 leading-relaxed">
+              <div>
+                <dt class="font-display font-bold">Problem</dt>
+                <dd class="text-muted">{item.problem}</dd>
+              </div>
+              <div>
+                <dt class="font-display font-bold">I did</dt>
+                <dd class="text-muted">{item.did}</dd>
+              </div>
+              <div>
+                <dt class="font-display font-bold">Result</dt>
+                <dd class="font-semibold">{item.result}</dd>
+              </div>
+            </dl>
+          </article>
+        ))
+      }
+    </div>
+
+    <p class="mt-8 text-muted">{earlierWork}</p>
+  </div>
+</section>

@@ -1,0 +1,23 @@
+---
+interface Props {
+  href: string;
+  variant?: 'primary' | 'inverse';
+  size?: 'sm' | 'lg';
+  class?: string;
+}
+
+const { href, variant = 'primary', size = 'lg', class: className } = Astro.props;
+---
+
+<a
+  href={href}
+  class:list={[
+    'inline-flex items-center gap-3 rounded-full font-display font-bold whitespace-nowrap transition-colors',
+    size === 'lg' ? 'lift px-7 py-4 text-lg' : 'px-4 py-2 text-sm',
+    variant === 'primary' ? 'bg-accent text-white hover:bg-accent-deep' : 'bg-white text-accent hover:bg-tint',
+    className,
+  ]}
+>
+  <slot />
+  {size === 'lg' && <span class="arrow" aria-hidden="true">&rarr;</span>}
+</a>
