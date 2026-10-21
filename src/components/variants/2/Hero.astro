@@ -1,0 +1,61 @@
+---
+import { Picture } from 'astro:assets';
+import photo from '../../../assets/jasper.png';
+import { availability, hero, mailto } from '../../../data/site';
+import HeaderName from '../../directions/HeaderName.astro';
+---
+
+<header class="mx-auto flex max-w-6xl items-center justify-between gap-4 px-5 py-5 md:px-12 md:py-8">
+  <HeaderName class="text-accent" />
+  <a
+    href={mailto}
+    class="rounded-full bg-accent px-4 py-2 text-sm font-bold text-white transition-colors hover:bg-accent-deep focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+  >
+    Email me
+  </a>
+</header>
+
+<section id="top" class="mx-auto grid max-w-6xl items-center gap-12 px-5 pt-6 pb-16 md:grid-cols-[1.3fr_1fr] md:px-12 md:pt-10 md:pb-24">
+  <div>
+    <p class="font-display text-2xl font-semibold md:text-3xl">
+      <span class="d-line" style="--d: 0">{hero.greeting}</span>
+    </p>
+    <h1 class="mt-4 font-display text-[2.7rem] leading-[1.02] font-black tracking-tight text-accent md:text-7xl">
+      {hero.headline.map((line, i) => <span class="d-line" style={`--d: ${i + 1}`}>{line}</span>)}
+    </h1>
+    <p class="d-fade mt-8 max-w-[34rem] text-lg leading-relaxed text-muted md:text-xl" style="--d: 3">
+      {hero.intro}
+    </p>
+    <div class="d-fade mt-10" style="--d: 4">
+      <a
+        href={mailto}
+        class="d-lift inline-flex items-center gap-3 rounded-full bg-accent px-7 py-4 text-lg font-bold text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent"
+      >
+        Email me <span class="d-arrow" aria-hidden="true">&rarr;</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="d-photo relative mx-auto w-full max-w-[20rem] md:max-w-[26rem]">
+    <div class="absolute inset-x-0 bottom-0 h-[85%] rounded-t-full bg-tint" aria-hidden="true"></div>
+    <Picture
+      src={photo}
+      alt={hero.photoAlt}
+      formats={['avif', 'webp']}
+      fallbackFormat="jpg"
+      width={900}
+      widths={[320, 480, 640, 900]}
+      sizes="(min-width: 768px) 26rem, 20rem"
+      loading="eager"
+      fetchpriority="high"
+      class="relative aspect-[4/5] w-[88%] rounded-t-full object-cover object-[50%_20%] mx-auto"
+    />
+  </div>
+</section>
+
+<div class="bg-accent text-white">
+  <p class="mx-auto flex max-w-6xl items-center gap-3 px-5 py-4 font-display font-bold md:px-12">
+    <span class="size-2.5 rounded-full bg-white ring-4 ring-white/25" aria-hidden="true"></span>
+    Available from {availability}
+  </p>
+</div>

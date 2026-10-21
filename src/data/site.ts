@@ -5,6 +5,8 @@ export const mailto = `mailto:${email}`;
 
 export const hero = {
   greeting: "Hi, I'm Jasper.",
+  name: 'Jasper Lammers',
+  role: 'Senior .NET engineer',
   headline: ['Building something new?', 'Stuck with something old?'],
   intro:
     'Yes, I can help. Senior .NET engineer, freelance, 15 years. I get up to speed fast, build alongside your team, and make sure the knowledge stays when I go.',

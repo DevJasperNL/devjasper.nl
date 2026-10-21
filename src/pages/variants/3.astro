@@ -1,0 +1,22 @@
+---
+import '@fontsource-variable/rubik';
+import '@fontsource-variable/source-sans-3';
+import '../../styles/directions/d.css';
+import '../../styles/variants/3.css';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Hero from '../../components/directions/d/Hero.astro';
+import WhatIDo from '../../components/directions/d/WhatIDo.astro';
+import Work from '../../components/directions/d/Work.astro';
+import Quotes from '../../components/directions/d/Quotes.astro';
+---
+
+<BaseLayout title="Variant 3: Rounder display type" description="Variant 3 of design direction D" noindex>
+  <div class="dir-d var-3 min-h-screen bg-bg font-body text-ink">
+    <Hero />
+    <main>
+      <WhatIDo />
+      <Work />
+      <Quotes />
+    </main>
+  </div>
+</BaseLayout>

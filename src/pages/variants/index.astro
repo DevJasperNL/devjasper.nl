@@ -1,0 +1,53 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const variants = [
+  {
+    href: '/variants/1',
+    name: '1. Text-first hero',
+    differs: 'Hero: no big photo, much larger headline, the photo becomes a round avatar next to the greeting.',
+  },
+  {
+    href: '/variants/2',
+    name: '2. White hero, blue as accent',
+    differs: 'Accent: white hero with the arched photo, blue only in the headline, buttons and a thin availability band.',
+  },
+  {
+    href: '/variants/3',
+    name: '3. Rounder display type',
+    differs: 'Typography: Rubik headings (rounded, chunky) on a bigger type scale; everything else as D.',
+  },
+  {
+    href: '/variants/4',
+    name: '4. Compact proof',
+    differs: 'Density: tighter spacing, thin blue rules between sections, work as three cards side by side, quotes as a plain grid.',
+  },
+  {
+    href: '/variants/5',
+    name: '5. White hero, compact proof',
+    differs: "Combination: variant 2's white hero with variant 4's compact sections below it.",
+  },
+];
+---
+
+<BaseLayout title="Variants of direction D" description="Variants of design direction D for devjasper.nl" noindex>
+  <main class="mx-auto max-w-2xl px-5 py-16 md:py-24">
+    <h1 class="text-3xl font-bold">Variants of direction D</h1>
+    <p class="mt-3 text-ink/70">
+      Same copy, same white and blazer blue. Each variant changes one or two things compared to
+      <a href="/directions/d" class="font-semibold text-accent underline underline-offset-2">the baseline, D</a>.
+    </p>
+    <ul class="mt-10 divide-y divide-ink/15 border-y border-ink/15">
+      {
+        variants.map((v) => (
+          <li>
+            <a href={v.href} class="group block py-6 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent">
+              <span class="text-xl font-semibold text-accent group-hover:underline">{v.name}</span>
+              <span class="mt-1 block text-ink/70">{v.differs}</span>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </main>
+</BaseLayout>

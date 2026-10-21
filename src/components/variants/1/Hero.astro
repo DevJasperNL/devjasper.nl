@@ -1,0 +1,60 @@
+---
+import { Picture } from 'astro:assets';
+import photo from '../../../assets/jasper.png';
+import { availability, hero, mailto } from '../../../data/site';
+import HeaderName from '../../directions/HeaderName.astro';
+---
+
+<div class="p-2 md:p-4">
+  <section id="top" class="rounded-[1.75rem] bg-accent text-white md:rounded-[2.5rem]">
+    <header class="flex items-center justify-between gap-4 px-5 pt-5 md:px-12 md:pt-8">
+      <HeaderName />
+      <a
+        href={mailto}
+        class="rounded-full bg-white px-4 py-2 text-sm font-bold text-accent transition-colors hover:bg-tint focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+      >
+        Email me
+      </a>
+    </header>
+
+    <div class="px-5 pt-14 pb-10 md:px-12 md:pt-24 md:pb-16">
+      <div class="d-fade flex items-center gap-4" style="--d: 0">
+        <Picture
+          src={photo}
+          alt={hero.photoAlt}
+          formats={['avif', 'webp']}
+          fallbackFormat="jpg"
+          width={192}
+          widths={[96, 192]}
+          sizes="96px"
+          loading="eager"
+          fetchpriority="high"
+          class="size-16 rounded-full object-cover ring-4 ring-white/30 md:size-24"
+        />
+        <p class="font-display text-2xl font-semibold md:text-4xl">{hero.greeting}</p>
+      </div>
+
+      <h1 class="mt-8 font-display text-[3.1rem] leading-[0.98] font-black tracking-tight md:mt-10 md:text-[6.5rem] xl:text-[8rem]">
+        {hero.headline.map((line, i) => <span class="d-line" style={`--d: ${i + 1}`}>{line}</span>)}
+      </h1>
+
+      <div class="mt-10 grid gap-8 md:mt-14 md:grid-cols-[1.3fr_1fr] md:items-end md:gap-16">
+        <p class="d-fade max-w-[38rem] text-lg leading-relaxed text-white/90 md:text-2xl" style="--d: 3">
+          {hero.intro}
+        </p>
+        <div class="d-fade flex flex-wrap items-center gap-x-7 gap-y-4 md:justify-end" style="--d: 4">
+          <p class="flex items-center gap-2.5 font-semibold">
+            <span class="size-2.5 rounded-full bg-white ring-4 ring-white/25" aria-hidden="true"></span>
+            Available from {availability}
+          </p>
+          <a
+            href={mailto}
+            class="d-lift inline-flex items-center gap-3 rounded-full bg-white px-7 py-4 text-lg font-bold text-accent focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+          >
+            Email me <span class="d-arrow" aria-hidden="true">&rarr;</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
