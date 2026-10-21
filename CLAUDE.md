@@ -41,11 +41,14 @@ Always run `npm run build` (and `npm run check` if available) before considering
 │   ├── pages/           # File-based routing; each file = one URL
 │   └── styles/
 │       └── global.css   # @import "tailwindcss"; plus @theme design tokens
+├── archive/             # Design history, outside the build
 ├── astro.config.mjs
 ├── tsconfig.json
 ├── .nvmrc
 └── CLAUDE.md
 ```
+
+`archive/` holds design history; never import from it or modify it unless asked.
 
 ## Conventions
 

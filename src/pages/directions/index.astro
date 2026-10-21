@@ -1,45 +1,23 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-
-const directions = [
-  {
-    href: '/directions/a',
-    name: 'A. Warm editorial',
-    summary: 'Fraunces + Source Sans 3. Warm paper, blazer blue, generous whitespace, big pull quotes. Calm and personal.',
-  },
-  {
-    href: '/directions/b',
-    name: 'B. Bold and playful',
-    summary: 'Bricolage Grotesque + Figtree. Pure white, blazer blue, highlighter yellow, chunky borders, bouncy motion.',
-  },
-  {
-    href: '/directions/c',
-    name: 'C. Engineering spec sheet',
-    summary: 'Schibsted Grotesk + IBM Plex. Grid lines, numbered sections, a scannable spec block in the hero.',
-  },
-  {
-    href: '/directions/d',
-    name: 'D. Blazer blue (the brief, to the letter)',
-    summary: 'Figtree + Source Sans 3. Only white and blazer blue: a blue hero panel, stacking work cards, swipeable quotes.',
-  },
-];
 ---
 
 <BaseLayout title="Design directions" description="Design directions for devjasper.nl" noindex>
   <main class="mx-auto max-w-2xl px-5 py-16 md:py-24">
     <h1 class="text-3xl font-bold">Design directions</h1>
-    <p class="mt-3 text-ink/70">Same copy, three looks. Hero plus What I do, Selected work and What colleagues say.</p>
+    <p class="mt-3 text-ink/70">
+      Direction D was chosen. Directions A to C are archived in <code>archive/design-directions/</code> (git tag
+      <code>design-directions-v1</code>).
+    </p>
     <ul class="mt-10 divide-y divide-ink/15 border-y border-ink/15">
-      {
-        directions.map((d) => (
-          <li>
-            <a href={d.href} class="group block py-6 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent">
-              <span class="text-xl font-semibold text-accent group-hover:underline">{d.name}</span>
-              <span class="mt-1 block text-ink/70">{d.summary}</span>
-            </a>
-          </li>
-        ))
-      }
+      <li>
+        <a href="/directions/d" class="group block py-6 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent">
+          <span class="text-xl font-semibold text-accent group-hover:underline">D. Blazer blue (chosen)</span>
+          <span class="mt-1 block text-ink/70">
+            Figtree + Source Sans 3. Only white and blazer blue: a blue hero panel, stacking work cards, swipeable quotes.
+          </span>
+        </a>
+      </li>
     </ul>
   </main>
 </BaseLayout>
