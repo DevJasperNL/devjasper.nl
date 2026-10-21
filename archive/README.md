@@ -11,4 +11,5 @@ Design history for devjasper.nl. Nothing here is part of the site.
 
 | Folder | Tag | What |
 | --- | --- | --- |
-| `design-directions/` | `design-directions-v1` | Directions A, B and C. D ("Blazer blue") was chosen and lives on in `src/`. |
+| `design-directions/` | `design-directions-v1` | Directions A, B and C. D ("Blazer blue") was chosen and refined in a second round of variants. |
+| `design-variants/` | `design-variants-v1` | Variants 1, 3, 4 and 5 of direction D. Variant 2 ("White hero, blue as accent") was chosen and lives on in `src/`; its design is written down in `docs/design.md`. D's original blue-panel hero is only in the tag. |

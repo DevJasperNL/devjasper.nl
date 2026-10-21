@@ -13,5 +13,5 @@ export default defineConfig({
     plugins: [tailwindcss()]
   },
 
-  integrations: [sitemap({ filter: (page) => !page.includes('/directions') && !page.includes('/variants') })]
+  integrations: [sitemap()]
 });
