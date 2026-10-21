@@ -1,21 +1,44 @@
 ---
+import { getImage } from 'astro:assets';
+import photo from '../assets/jasper.png';
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Contact from '../components/Contact.astro';
+import Hero from '../components/Hero.astro';
+import HowIWork from '../components/HowIWork.astro';
+import OpenSource from '../components/OpenSource.astro';
+import Quotes from '../components/Quotes.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+import WhatIDo from '../components/WhatIDo.astro';
+import Work from '../components/Work.astro';
+import { email, hero, links, seo } from '../data/site';
+
+const jsonLdPhoto = await getImage({ src: photo, width: 512, format: 'jpg' });
+
+const person = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: hero.name,
+  jobTitle: 'Freelance Senior .NET Engineer',
+  description: seo.description,
+  url: Astro.site?.href,
+  email: `mailto:${email}`,
+  image: new URL(jsonLdPhoto.src, Astro.site).href,
+  sameAs: [links.linkedIn, links.gitHub],
+  knowsAbout: ['.NET', 'Blazor', 'Azure', 'Entra ID', 'OIDC', 'SAML', 'SCIM', 'Software architecture'],
+};
 ---
 
-<BaseLayout
-  title="Placeholder Name | Freelance Software Engineer"
-  description="Placeholder description for the home page."
->
-  <main class="mx-auto flex min-h-screen max-w-2xl flex-col justify-center gap-4 px-6">
-    <h1 class="text-4xl font-bold text-ink">Placeholder Name</h1>
-    <p class="text-lg text-ink/80">Placeholder tagline for a freelance senior software engineer.</p>
-    <p>
-      <a
-        href="mailto:hello@example.com"
-        class="font-medium text-accent underline underline-offset-4 hover:no-underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
-      >
-        Get in touch
-      </a>
-    </p>
+<BaseLayout title={seo.title} description={seo.description} ogTitle={seo.ogTitle} ogDescription={seo.ogDescription} jsonLd={person}>
+  <SiteHeader />
+  <main id="main">
+    <Hero />
+    <WhatIDo />
+    <Work />
+    <Quotes />
+    <HowIWork />
+    <OpenSource />
+    <Contact />
   </main>
+  <SiteFooter />
 </BaseLayout>

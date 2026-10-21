@@ -1,7 +1,29 @@
 export const availability = 'January 2027';
 
+// Occurify's GitHub star count, updated by hand.
+export const stars = 78;
+
 export const email = 'jasper@devjasper.nl';
 export const mailto = `mailto:${email}`;
+
+export const links = {
+  linkedIn: 'https://www.linkedin.com/in/jasper-lammers/',
+  gitHub: 'https://github.com/DevJasperNL',
+};
+
+export const seo = {
+  title: 'Jasper Lammers | Freelance Senior .NET Engineer',
+  description: `Freelance senior .NET engineer, 15 years in logistics, enterprise identity and video streaming. Legacy to modern, hands-on. Available ${availability}.`,
+  ogTitle: 'Jasper Lammers, freelance senior .NET engineer',
+  ogDescription: 'Building something new? Stuck with something old? Senior .NET engineer, freelance, 15 years.',
+};
+
+export const nav = [
+  { label: 'Work', href: '/#work' },
+  { label: 'How I work', href: '/#how-i-work' },
+  { label: 'Open source', href: '/#open-source' },
+  { label: 'Contact', href: '/#contact' },
+];
 
 export const hero = {
   greeting: "Hi, I'm Jasper.",
@@ -13,12 +35,12 @@ export const hero = {
   photoAlt: 'Jasper Lammers, smiling, in a blue blazer',
 };
 
-export interface Service {
+export interface Point {
   title: string;
   body: string;
 }
 
-export const services: Service[] = [
+export const services: Point[] = [
   {
     title: 'Legacy to modern',
     body: 'Old .NET (WCF, WebForms) moved to .NET 8, Blazor and Azure, at DAF and New Media Systems.',
@@ -116,4 +138,72 @@ export const quotes: Quote[] = [
 export const linkedInRecommendations = {
   label: 'More recommendations on LinkedIn',
   href: 'https://www.linkedin.com/in/jasper-lammers/details/recommendations/',
+};
+
+export const howIWork = {
+  points: [
+    {
+      title: 'I learn your system quickly',
+      body: "Warehouse robots, identity, live video: new domain every time. I read the code and ask the awkward questions early, so I'm useful soon.",
+    },
+    {
+      title: 'I leave the knowledge behind',
+      body: "Clear docs, careful reviews, and time for the developers who stay. When I leave, you shouldn't notice a gap.",
+    },
+    {
+      title: 'I build what you need',
+      body: 'I lay out options with pros and cons and pick the simplest one that holds. Then I help build it.',
+    },
+  ] as Point[],
+  ai: 'I use Claude Code every day to deliver faster, and I can help your team do the same without the hype.',
+  personal:
+    "Off the clock: I've made games since primary school, I go bouldering, I write about philosophy, and if you challenge me to a board game, I won't say no.",
+};
+
+export interface Project {
+  name: string;
+  body: string;
+  stars?: number;
+  link?: { label: string; href: string };
+}
+
+export const openSource = {
+  lead: "Don't take my word for it. Read the code.",
+  projects: [
+    {
+      name: 'Occurify',
+      stars,
+      body: 'A .NET library for scheduling and transforming timelines. 4500+ unit tests.',
+      link: { label: 'github.com/Occurify/Occurify', href: 'https://github.com/Occurify/Occurify' },
+    },
+    {
+      name: 'CodeCasa',
+      body: 'The .NET libraries that run my smart home, built on NetDaemon. I also contribute to NetDaemon itself.',
+    },
+  ] as Project[],
+  all: { label: 'All on GitHub', href: links.gitHub },
+};
+
+const cvSubject = 'CV request: [assignment]';
+const cvBody = 'Hi Jasper, could you send me a CV tailored to this assignment? [link or short description]';
+
+export const contact = {
+  heading: "New or old, let's talk about it.",
+  body: `Tell me about your system and where it hurts. I'm available from ${availability}.`,
+  cvPrompt: 'Broker or recruiter?',
+  cvLabel: 'Request my CV',
+  cvHref: `${mailto}?subject=${encodeURIComponent(cvSubject)}&body=${encodeURIComponent(cvBody)}`,
+};
+
+export const footer = {
+  name: 'Jasper Lammers',
+  privacy: 'No cookies, no trackers.',
+  kvk: 'KvK 86591800',
+};
+
+export const notFound = {
+  title: 'Page not found | Jasper Lammers',
+  heading: "This page doesn't exist.",
+  body: 'Maybe it moved, maybe it never was. Everything worth seeing is on the home page.',
+  button: 'Back to the home page',
 };

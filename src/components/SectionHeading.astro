@@ -1,0 +1,14 @@
+---
+interface Props {
+  id: string;
+  rule?: boolean;
+  class?: string;
+}
+
+const { id, rule = false, class: className = 'text-accent' } = Astro.props;
+---
+
+<h2 id={id} class:list={['font-display text-4xl font-black tracking-tight text-balance md:text-6xl', className]}>
+  <slot />
+</h2>
+{rule && <div class="grow-in mt-6 h-1.5 w-full rounded-full bg-accent" aria-hidden="true"></div>}

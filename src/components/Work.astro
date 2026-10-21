@@ -1,11 +1,12 @@
 ---
-import { earlierWork, work } from '../../../data/site';
-import WorkArt from '../WorkArt.astro';
+import { earlierWork, work } from '../data/site';
+import SectionHeading from './SectionHeading.astro';
+import WorkArt from './WorkArt.astro';
 ---
 
-<section aria-labelledby="d-work" class="bg-tint">
+<section id="work" aria-labelledby="work-heading" class="bg-tint">
   <div class="mx-auto max-w-6xl px-5 py-20 md:px-12 md:py-28">
-    <h2 id="d-work" class="font-display text-4xl font-black tracking-tight text-accent md:text-6xl">Selected work</h2>
+    <SectionHeading id="work-heading">Selected work</SectionHeading>
 
     <!-- Stacking only from md up: on phones the cards are taller than the screen, so the next card would cover unread text. -->
     <div class="mt-12 space-y-8 md:space-y-16">

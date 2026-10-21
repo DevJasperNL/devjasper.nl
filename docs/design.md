@@ -35,7 +35,7 @@ Mobile / from `md` (768px) up.
 
 | Element | Size | Weight | Style |
 | --- | --- | --- | --- |
-| h1 (hero headline) | 2.7rem / 4.5rem (`text-7xl`) | 900 | accent, `leading-[1.02]`, tight tracking, one line per question |
+| h1 (hero headline) | 2.7rem / 3.75rem (`md:text-6xl`) / 4.5rem (`lg:text-7xl`) | 900 | accent, `leading-[1.02]`, tight tracking, one line per question |
 | Hero greeting | 1.5rem / 1.875rem | 600 | ink |
 | h2 (section) | 2.25rem / 3.75rem (`text-4xl` / `text-6xl`) | 900 | accent, tight tracking |
 | h3 (point, card) | 1.5rem to 2.25rem | 800 to 900 | ink, `leading-tight` |
@@ -59,7 +59,7 @@ Mobile / from `md` (768px) up.
 - **Quote cards:** solid accent, white text, a large display quote mark, name in bold. A horizontal swipe row with snap on phones, a 2x2 grid from `md`.
 - **Availability band:** full-width accent strip with a white status dot and "Available from {availability}".
 - **Contact panel:** a large accent rounded panel with white heading and inverse button; the one other place blue fills an area.
-- **Header:** name (and role from `sm`) on the left, nav links from `md`, a small primary "Email me" pill on the right. Not sticky.
+- **Header:** name (and role from `sm`) on the left, nav links from `lg` (they crowd the header below that), a small primary "Email me" pill on the right. Not sticky.
 - **Focus:** every interactive element has a visible `focus-visible` outline: 2px accent with offset on white, 2px white on accent.
 
 ## Imagery

@@ -1,14 +1,17 @@
 ---
-import { linkedInRecommendations, quotes } from '../../../data/site';
+import { linkedInRecommendations, quotes } from '../data/site';
+import ArrowLink from './ArrowLink.astro';
+import SectionHeading from './SectionHeading.astro';
 ---
 
-<section aria-labelledby="d-quotes" class="py-20 md:py-28">
+<section id="quotes" aria-labelledby="quotes-heading" class="py-20 md:py-28">
   <div class="mx-auto max-w-6xl px-5 md:px-12">
-    <h2 id="d-quotes" class="font-display text-4xl font-black tracking-tight text-accent md:text-6xl">What colleagues say</h2>
+    <SectionHeading id="quotes-heading">What colleagues say</SectionHeading>
   </div>
 
+  <!-- Focusable so keyboard users can scroll the swipe row on phones. -->
   <ul
-    class="d-quotes mt-12 flex snap-x snap-mandatory gap-5 overflow-x-auto pb-6 md:grid md:grid-cols-2 md:gap-8 md:overflow-visible md:pb-0"
+    class="quote-row mt-12 flex snap-x snap-mandatory gap-5 overflow-x-auto pb-6 md:grid md:grid-cols-2 md:gap-8 md:overflow-visible md:pb-0"
     tabindex="0"
     aria-label="Quotes from colleagues"
   >
@@ -29,11 +32,6 @@ import { linkedInRecommendations, quotes } from '../../../data/site';
   </ul>
 
   <div class="mx-auto max-w-6xl px-5 md:px-12">
-    <a
-      href={linkedInRecommendations.href}
-      class="mt-8 inline-block font-display text-lg font-bold text-accent underline decoration-2 underline-offset-4"
-    >
-      {linkedInRecommendations.label} <span class="d-arrow" aria-hidden="true">&rarr;</span>
-    </a>
+    <ArrowLink href={linkedInRecommendations.href} class="mt-8 text-accent">{linkedInRecommendations.label}</ArrowLink>
   </div>
 </section>

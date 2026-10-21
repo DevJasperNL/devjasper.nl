@@ -1,0 +1,34 @@
+---
+import { hero, mailto, nav } from '../data/site';
+import Button from './Button.astro';
+---
+
+<a
+  href="#main"
+  class="sr-only rounded-full bg-accent px-5 py-3 font-display font-bold text-white focus:not-sr-only focus:absolute focus:top-3 focus:left-3 focus:z-10"
+>
+  Skip to content
+</a>
+
+<header class="mx-auto flex max-w-6xl items-center justify-between gap-4 px-5 py-5 md:px-12 md:py-8">
+  <a href="/" class="font-display leading-tight text-accent">
+    <span class="text-lg font-extrabold">{hero.name}</span>
+    <span class="hidden font-semibold text-muted sm:inline">&nbsp;&middot; {hero.role}</span>
+    <span class="block text-sm font-semibold text-muted sm:hidden">{hero.role}</span>
+  </a>
+  <nav aria-label="Main" class="flex items-center gap-7">
+    <!-- Links only from lg up: below that they crowd the name and the button, and the page is one short scroll anyway. -->
+    <ul class="hidden items-center gap-6 font-display font-semibold whitespace-nowrap lg:flex">
+      {
+        nav.map((item) => (
+          <li>
+            <a href={item.href} class="underline-offset-4 hover:text-accent hover:underline">
+              {item.label}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+    <Button href={mailto} size="sm">Email me</Button>
+  </nav>
+</header>
