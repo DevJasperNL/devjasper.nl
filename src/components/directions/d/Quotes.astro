@@ -1,0 +1,39 @@
+---
+import { linkedInRecommendations, quotes } from '../../../data/site';
+---
+
+<section aria-labelledby="d-quotes" class="py-20 md:py-28">
+  <div class="mx-auto max-w-6xl px-5 md:px-12">
+    <h2 id="d-quotes" class="font-display text-4xl font-black tracking-tight text-accent md:text-6xl">What colleagues say</h2>
+  </div>
+
+  <ul
+    class="d-quotes mt-12 flex snap-x snap-mandatory gap-5 overflow-x-auto pb-6 md:gap-8"
+    tabindex="0"
+    aria-label="Quotes from colleagues, scroll sideways for more"
+  >
+    {
+      quotes.map((q) => (
+        <li class="w-[85%] shrink-0 snap-start md:w-[30rem]">
+          <figure class="flex h-full flex-col rounded-[1.75rem] bg-accent p-7 text-white md:p-10">
+            <span class="font-display text-6xl leading-none font-black" aria-hidden="true">&ldquo;</span>
+            <blockquote class="-mt-3 font-display text-xl leading-snug font-semibold md:text-2xl">{q.text}</blockquote>
+            <figcaption class="mt-auto pt-8 text-base leading-snug text-white/90">
+              <span class="font-bold text-white">{q.name}</span>, {q.role}
+              {q.translated && <span> (Translated from Dutch)</span>}
+            </figcaption>
+          </figure>
+        </li>
+      ))
+    }
+  </ul>
+
+  <div class="mx-auto max-w-6xl px-5 md:px-12">
+    <a
+      href={linkedInRecommendations.href}
+      class="mt-8 inline-block font-display text-lg font-bold text-accent underline decoration-2 underline-offset-4"
+    >
+      {linkedInRecommendations.label} <span class="d-arrow" aria-hidden="true">&rarr;</span>
+    </a>
+  </div>
+</section>

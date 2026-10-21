@@ -1,0 +1,22 @@
+---
+import '@fontsource-variable/fraunces/full.css';
+import '@fontsource-variable/fraunces/full-italic.css';
+import '@fontsource-variable/source-sans-3';
+import '../../styles/directions/a.css';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Hero from '../../components/directions/a/Hero.astro';
+import WhatIDo from '../../components/directions/a/WhatIDo.astro';
+import Work from '../../components/directions/a/Work.astro';
+import Quotes from '../../components/directions/a/Quotes.astro';
+---
+
+<BaseLayout title="Direction A: Warm editorial" description="Design direction A for devjasper.nl" noindex>
+  <div class="dir-a min-h-screen bg-bg font-body text-ink">
+    <Hero />
+    <main>
+      <WhatIDo />
+      <Work />
+      <Quotes />
+    </main>
+  </div>
+</BaseLayout>

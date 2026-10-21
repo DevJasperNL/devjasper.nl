@@ -1,0 +1,78 @@
+---
+import { Picture } from 'astro:assets';
+import photo from '../../../assets/jasper.png';
+import { availability, hero, mailto } from '../../../data/site';
+
+const letters = [...hero.greeting];
+const headline = hero.headline.map((line) => {
+  const words = line.split(' ');
+  return { lead: words.slice(0, -1).join(' '), last: words.at(-1) };
+});
+---
+
+<header class="mx-auto flex max-w-7xl items-center justify-between px-5 py-5 md:px-10">
+  <a href="#top" class="font-display b-display text-xl font-extrabold">jasper<span class="text-accent">.</span></a>
+  <a
+    href={mailto}
+    class="rounded-xl border-2 border-ink bg-marker px-4 py-2 text-sm font-bold transition-transform hover:-translate-y-0.5 focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-accent"
+  >
+    Email me
+  </a>
+</header>
+
+<section id="top" class="mx-auto grid max-w-7xl items-center gap-12 px-5 pt-6 pb-20 md:grid-cols-[1.5fr_1fr] md:px-10 md:pt-12 md:pb-28">
+  <div>
+    <p class="font-display b-display text-3xl font-bold text-accent md:text-4xl">
+      <span class="sr-only">{hero.greeting}</span>
+      <span aria-hidden="true">
+        {letters.map((ch, i) => <span class="b-letter" style={`--i: ${i}`}>{ch === ' ' ? ' ' : ch}</span>)}
+      </span>
+    </p>
+    <h1 class="mt-4 font-display b-display text-[2.9rem] leading-[0.98] font-extrabold tracking-tight md:text-[5.5rem] xl:text-[6.5rem]">
+      {
+        headline.map((l, i) => (
+          <span class="b-pop block" style={`--d: ${i}`}>
+            {l.lead} <span class="b-marker" style={`--d: ${i}`}>{l.last}</span>
+          </span>
+        ))
+      }
+    </h1>
+    <p class="b-pop mt-8 max-w-[36rem] text-lg leading-relaxed md:text-xl" style="--d: 2">
+      {hero.intro}
+    </p>
+    <div class="b-pop mt-10 flex flex-wrap items-center gap-x-6 gap-y-5" style="--d: 3">
+      <a
+        href={mailto}
+        class="b-card b-shadow inline-flex items-center gap-3 rounded-2xl border-2 border-ink bg-accent px-7 py-4 text-lg font-bold text-white focus-visible:outline-3 focus-visible:outline-offset-4 focus-visible:outline-accent"
+      >
+        Email me
+        <svg viewBox="0 0 24 24" class="size-5" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round" /></svg>
+      </a>
+      <p class="inline-flex items-center gap-2 rounded-full bg-tint px-4 py-2 font-semibold">
+        <span class="relative flex size-2.5" aria-hidden="true">
+          <span class="absolute inline-flex size-full animate-ping rounded-full bg-accent opacity-60 motion-reduce:hidden"></span>
+          <span class="relative inline-flex size-2.5 rounded-full bg-accent"></span>
+        </span>
+        Available from {availability}
+      </p>
+    </div>
+  </div>
+
+  <div class="relative mx-auto w-full max-w-[20rem] md:max-w-[26rem]">
+    <div class="absolute inset-0 translate-x-5 translate-y-5 rotate-3 rounded-[2.5rem] bg-accent" aria-hidden="true"></div>
+    <div class="b-photo relative overflow-hidden rounded-[2.5rem] border-2 border-ink transition-transform duration-300">
+      <Picture
+        src={photo}
+        alt={hero.photoAlt}
+        formats={['avif', 'webp']}
+        fallbackFormat="jpg"
+        width={900}
+        widths={[320, 480, 640, 832]}
+        sizes="(min-width: 768px) 26rem, 20rem"
+        loading="eager"
+        fetchpriority="high"
+        class="aspect-square w-full object-cover"
+      />
+    </div>
+  </div>
+</section>

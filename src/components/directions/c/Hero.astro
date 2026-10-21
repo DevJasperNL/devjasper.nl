@@ -1,0 +1,79 @@
+---
+import { Picture } from 'astro:assets';
+import photo from '../../../assets/jasper.png';
+import { availability, hero, mailto } from '../../../data/site';
+
+const spec = [
+  { label: 'Role', value: 'Senior .NET engineer, freelance' },
+  { label: 'Experience', value: '15 years' },
+  { label: 'Clients', value: 'Vanderlande, DAF, New Media Systems' },
+];
+---
+
+<header class="border-b border-ink">
+  <div class="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 md:px-10">
+    <a href="#top" class="font-display text-lg font-extrabold tracking-tight">Jasper Lammers</a>
+    <a
+      href={mailto}
+      class="border border-ink px-4 py-2 font-mono text-sm font-medium transition-colors hover:bg-ink hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+    >
+      Email me
+    </a>
+  </div>
+</header>
+
+<section id="top" class="relative">
+  <div class="c-grid-bg absolute inset-0 -z-0" aria-hidden="true"></div>
+  <div class="relative mx-auto grid max-w-7xl gap-12 px-5 pt-12 pb-20 md:grid-cols-12 md:gap-10 md:px-10 md:pt-20 md:pb-28">
+    <div class="md:col-span-7">
+      <p class="c-in font-display text-2xl font-bold text-accent md:text-3xl" style="--d: 0">{hero.greeting}</p>
+      <h1 class="mt-4 font-display text-[2.6rem] leading-[1.02] font-extrabold tracking-tight md:text-7xl">
+        {hero.headline.map((line, i) => <span class="c-in block" style={`--d: ${i + 1}`}>{line}</span>)}
+      </h1>
+      <p class="c-in mt-8 max-w-[36rem] text-lg leading-relaxed text-muted md:text-xl" style="--d: 3">{hero.intro}</p>
+      <div class="c-in mt-10 flex flex-wrap items-center gap-x-8 gap-y-4" style="--d: 4">
+        <a
+          href={mailto}
+          class="inline-flex items-center gap-3 bg-accent px-7 py-4 text-lg font-semibold text-white transition-colors hover:bg-accent-deep focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-accent"
+        >
+          Email me <span aria-hidden="true" class="font-mono">&rarr;</span>
+        </a>
+        <p class="flex items-center gap-2.5 font-mono text-sm">
+          <span class="size-2 bg-spark" aria-hidden="true"></span>
+          Available from {availability}
+        </p>
+      </div>
+    </div>
+
+    <div class="md:col-span-5">
+      <div class="relative mx-auto max-w-[20rem] p-3 md:max-w-none">
+        <span class="c-crop top-0 left-0 border-t-2 border-l-2" aria-hidden="true"></span>
+        <span class="c-crop top-0 right-0 border-t-2 border-r-2" aria-hidden="true"></span>
+        <span class="c-crop bottom-0 left-0 border-b-2 border-l-2" aria-hidden="true"></span>
+        <span class="c-crop right-0 bottom-0 border-r-2 border-b-2" aria-hidden="true"></span>
+        <Picture
+          src={photo}
+          alt={hero.photoAlt}
+          formats={['avif', 'webp']}
+          fallbackFormat="jpg"
+          width={900}
+          widths={[320, 480, 640, 900]}
+          sizes="(min-width: 768px) 34vw, 20rem"
+          loading="eager"
+          fetchpriority="high"
+          class="c-plot aspect-[4/3] w-full object-cover object-[50%_35%]"
+        />
+      </div>
+      <dl class="mt-6 border-t border-ink bg-white/80 font-mono text-sm">
+        {
+          spec.map((row, i) => (
+            <div class="c-row c-in grid grid-cols-[7.5rem_1fr] gap-3 border-b border-rule px-1 py-2.5" style={`--d: ${i + 3}`}>
+              <dt class="text-muted uppercase">{row.label}</dt>
+              <dd>{row.value}</dd>
+            </div>
+          ))
+        }
+      </dl>
+    </div>
+  </div>
+</section>

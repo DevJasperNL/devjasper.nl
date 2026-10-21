@@ -1,0 +1,185 @@
+.dir-b {
+  --color-bg: #ffffff;
+  --color-ink: #16202c;
+  --color-muted: #475263;
+  --color-accent: #2b5ba8;
+  --color-accent-deep: #1e3f78;
+  --color-tint: #eef3fa;
+  --color-marker: #ffd84d;
+
+  --font-display: 'Bricolage Grotesque Variable', system-ui, sans-serif;
+  --font-body: 'Figtree Variable', system-ui, sans-serif;
+
+  --art-line: #16202c;
+  --art-fill: #ffffff;
+  --art-pop: #ffd84d;
+}
+
+.dir-b .b-display {
+  font-variation-settings: 'opsz' 96, 'wdth' 85;
+}
+
+.dir-b .b-marker {
+  background-image: linear-gradient(var(--color-marker), var(--color-marker));
+  background-repeat: no-repeat;
+  background-position: 0 88%;
+  background-size: 100% 0.42em;
+  padding-inline: 0.06em;
+}
+
+.dir-b .b-shadow {
+  box-shadow: 6px 6px 0 var(--color-ink);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .dir-b .b-letter {
+    display: inline-block;
+    animation: b-wave 700ms cubic-bezier(0.3, 1.6, 0.5, 1) both;
+    animation-delay: calc(var(--i) * 45ms + 100ms);
+  }
+
+  .dir-b .b-pop {
+    animation: b-pop 700ms cubic-bezier(0.3, 1.4, 0.5, 1) both;
+    animation-delay: calc(var(--d, 0) * 110ms + 450ms);
+  }
+
+  .dir-b .b-marker {
+    animation: b-marker 600ms ease-out both;
+    animation-delay: calc(var(--d, 0) * 110ms + 900ms);
+  }
+
+  .dir-b .b-photo {
+    animation: b-photo 900ms cubic-bezier(0.3, 1.4, 0.5, 1) 300ms both;
+  }
+
+  .dir-b .b-photo:hover {
+    transform: rotate(-2deg) scale(1.02);
+  }
+
+  .dir-b .b-card {
+    transition: transform 250ms cubic-bezier(0.3, 1.4, 0.5, 1), box-shadow 250ms;
+  }
+
+  .dir-b .b-card:hover {
+    transform: translate(-3px, -3px) rotate(-0.6deg);
+    box-shadow: 10px 10px 0 var(--color-ink);
+  }
+
+  .dir-b .work-art .art-pan {
+    animation: b-pan 3s ease-in-out infinite;
+  }
+
+  .dir-b .work-art .art-wave {
+    animation: b-pulse 1.8s ease-in-out infinite;
+  }
+
+  .dir-b .work-art .art-wave-2 {
+    animation-delay: 200ms;
+  }
+
+  .dir-b .work-art .art-wave-3 {
+    animation-delay: 400ms;
+  }
+
+  .dir-b .work-art .art-shackle {
+    animation: b-shackle 3s ease-in-out infinite;
+  }
+
+  .dir-b .work-art .art-lift {
+    animation: b-lift 4s ease-in-out infinite;
+  }
+
+  .dir-b .work-art .art-shuttle {
+    animation: b-shuttle 3.2s ease-in-out infinite;
+  }
+
+  .dir-b .work-art .art-shuttle-2 {
+    animation-direction: reverse;
+  }
+
+  @supports (animation-timeline: view()) {
+    .dir-b .b-reveal {
+      animation: b-pop linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 40%;
+    }
+  }
+}
+
+@keyframes b-wave {
+  from {
+    opacity: 0;
+    transform: translateY(0.5em) rotate(12deg);
+  }
+}
+
+@keyframes b-pop {
+  from {
+    opacity: 0;
+    transform: translateY(24px) scale(0.97);
+  }
+}
+
+@keyframes b-marker {
+  from {
+    background-size: 0% 0.42em;
+  }
+}
+
+@keyframes b-photo {
+  from {
+    opacity: 0;
+    transform: rotate(6deg) scale(0.85);
+  }
+}
+
+@keyframes b-pan {
+  0%,
+  100% {
+    transform: translateX(-5px);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+}
+
+@keyframes b-pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.2;
+  }
+}
+
+@keyframes b-shackle {
+  0%,
+  70%,
+  100% {
+    transform: translateY(0);
+  }
+  80% {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes b-lift {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(84px);
+  }
+}
+
+@keyframes b-shuttle {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(10px);
+  }
+}

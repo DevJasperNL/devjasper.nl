@@ -1,0 +1,109 @@
+.dir-c {
+  --color-bg: #ffffff;
+  --color-ink: #14213d;
+  --color-muted: #4a5670;
+  --color-accent: #2b5ba8;
+  --color-accent-deep: #1e3f78;
+  --color-tint: #eef3fa;
+  --color-rule: #d9e2ef;
+  --color-spark: #d9480f;
+
+  --font-display: 'Schibsted Grotesk Variable', system-ui, sans-serif;
+  --font-body: 'IBM Plex Sans', system-ui, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+
+  --art-line: #2b5ba8;
+  --art-fill: #eef3fa;
+  --art-pop: #d9480f;
+}
+
+.dir-c .c-grid-bg {
+  background-image:
+    linear-gradient(var(--color-rule) 1px, transparent 1px),
+    linear-gradient(90deg, var(--color-rule) 1px, transparent 1px);
+  background-size: 32px 32px;
+  background-position: -1px -1px;
+  mask-image: linear-gradient(to bottom, #000 40%, transparent);
+}
+
+.dir-c .c-crop {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border-color: var(--color-ink);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .dir-c .c-in {
+    animation: c-in 500ms steps(1, end) both, c-slide 600ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+    animation-delay: calc(var(--d, 0) * 90ms + 80ms);
+  }
+
+  .dir-c .c-plot {
+    animation: c-plot 1400ms cubic-bezier(0.6, 0, 0.3, 1) 400ms both;
+  }
+
+  .dir-c .c-hrule {
+    transform-origin: left;
+    animation: c-draw 900ms cubic-bezier(0.6, 0, 0.3, 1) both;
+    animation-delay: calc(var(--d, 0) * 90ms + 200ms);
+  }
+
+  .dir-c .c-row {
+    transition: background-color 150ms;
+  }
+
+  .dir-c .c-row:hover {
+    background-color: var(--color-tint);
+  }
+
+  @supports (animation-timeline: view()) {
+    .dir-c .c-reveal {
+      animation: c-slide linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 40%;
+    }
+
+    .dir-c .c-reveal .work-art,
+    .dir-c .c-scroll-plot {
+      animation: c-plot linear both;
+      animation-timeline: view();
+      animation-range: entry 10% cover 40%;
+    }
+
+    .dir-c .c-scroll-rule {
+      transform-origin: left;
+      animation: c-draw linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 80%;
+    }
+  }
+}
+
+@keyframes c-in {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes c-slide {
+  from {
+    opacity: 0;
+    transform: translateX(-12px);
+  }
+}
+
+@keyframes c-plot {
+  from {
+    clip-path: inset(0 100% 0 0);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+@keyframes c-draw {
+  from {
+    transform: scaleX(0);
+  }
+}

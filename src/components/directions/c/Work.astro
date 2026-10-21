@@ -1,0 +1,50 @@
+---
+import { earlierWork, work } from '../../../data/site';
+import WorkArt from '../WorkArt.astro';
+import SectionLabel from './SectionLabel.astro';
+---
+
+<section aria-labelledby="c-work" class="bg-tint/60">
+  <div class="mx-auto max-w-7xl px-5 py-20 md:px-10 md:py-24">
+    <SectionLabel index="02" id="c-work" title="Selected work" />
+
+    <div class="mt-12 space-y-14">
+      {
+        work.map((item, i) => (
+          <article class="c-reveal border border-ink bg-white">
+            <p class="flex flex-wrap justify-between gap-2 border-b border-ink px-5 py-2.5 font-mono text-sm md:px-8">
+              <span>
+                2.{i + 1} &middot; {item.client}
+              </span>
+              <span class="text-muted">{item.period}</span>
+            </p>
+            <div class="grid md:grid-cols-12">
+              <div class="flex items-center border-b border-rule p-6 md:col-span-4 md:border-r md:border-b-0 md:p-8">
+                <WorkArt art={item.art} class="w-full" />
+              </div>
+              <div class="p-6 md:col-span-8 md:p-8">
+                <h3 class="font-display text-3xl leading-tight font-extrabold tracking-tight md:text-4xl">{item.title}</h3>
+                <dl class="mt-6 grid gap-6 md:grid-cols-3">
+                  <div>
+                    <dt class="font-mono text-xs tracking-wider text-muted uppercase">Problem</dt>
+                    <dd class="mt-2 leading-relaxed">{item.problem}</dd>
+                  </div>
+                  <div>
+                    <dt class="font-mono text-xs tracking-wider text-muted uppercase">I did</dt>
+                    <dd class="mt-2 leading-relaxed">{item.did}</dd>
+                  </div>
+                  <div>
+                    <dt class="font-mono text-xs tracking-wider text-accent uppercase">Result</dt>
+                    <dd class="mt-2 leading-relaxed font-semibold">{item.result}</dd>
+                  </div>
+                </dl>
+              </div>
+            </div>
+          </article>
+        ))
+      }
+    </div>
+
+    <p class="mt-10 font-mono text-sm leading-relaxed text-muted">{earlierWork}</p>
+  </div>
+</section>

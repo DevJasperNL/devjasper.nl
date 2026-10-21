@@ -1,6 +1,18 @@
 @import "tailwindcss";
 
+/* Each design direction overrides these on its wrapper (.dir-a, .dir-b, .dir-c). */
 @theme {
-  --color-ink: #1f2933;
-  --color-accent: #0f766e;
+  --color-bg: #ffffff;
+  --color-ink: #1b2430;
+  --color-muted: #4a5568;
+  --color-accent: #2b5ba8;
+  --color-accent-deep: #1e3f78;
+  --color-tint: #eef3fa;
+  --color-rule: #e2e8f0;
+  --color-spark: #c8553d;
+  --color-marker: #ffd84d;
+
+  --font-display: ui-sans-serif, system-ui, sans-serif;
+  --font-body: ui-sans-serif, system-ui, sans-serif;
+  --font-mono: ui-monospace, monospace;
 }

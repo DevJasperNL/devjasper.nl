@@ -1,0 +1,30 @@
+---
+import { linkedInRecommendations, quotes } from '../../../data/site';
+import SectionLabel from './SectionLabel.astro';
+---
+
+<section aria-labelledby="c-quotes" class="mx-auto max-w-7xl px-5 py-20 md:px-10 md:py-24">
+  <SectionLabel index="03" id="c-quotes" title="What colleagues say" />
+
+  <div class="mt-12 grid gap-px border border-ink bg-ink md:grid-cols-2">
+    {
+      quotes.map((q, i) => (
+        <figure class="c-reveal c-row flex flex-col bg-white p-6 md:p-10">
+          <span class="font-mono text-xs text-muted" aria-hidden="true">REF.0{i + 1}</span>
+          <blockquote class="mt-4 mb-6 font-display text-xl leading-snug font-semibold md:text-2xl">&ldquo;{q.text}&rdquo;</blockquote>
+          <figcaption class="mt-auto border-t border-rule pt-4 text-sm leading-relaxed">
+            <span class="font-semibold">{q.name}</span>, <span class="text-muted">{q.role}</span>
+            {q.translated && <span class="text-muted"> (Translated from Dutch)</span>}
+          </figcaption>
+        </figure>
+      ))
+    }
+  </div>
+
+  <a
+    href={linkedInRecommendations.href}
+    class="mt-10 inline-flex items-center gap-2 font-mono text-sm font-medium text-accent underline decoration-accent/30 underline-offset-4 hover:decoration-accent"
+  >
+    {linkedInRecommendations.label} <span aria-hidden="true">&rarr;</span>
+  </a>
+</section>
