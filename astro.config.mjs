@@ -6,12 +6,11 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  // TODO: replace with the production domain (https://devjasper.nl) before launch.
-  site: 'https://example.com',
+  site: 'https://devjasper.nl',
 
   vite: {
     plugins: [tailwindcss()]
   },
 
-  integrations: [sitemap()]
+  integrations: [sitemap({ filter: (page) => !page.includes('/404') })]
 });
