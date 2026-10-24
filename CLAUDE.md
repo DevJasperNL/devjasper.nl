@@ -84,6 +84,6 @@ The full spec is `docs/design.md`; follow it strictly. Copy lives in `src/data/s
 
 ## Git workflow
 
-- Work on feature branches; merge to `main` only when `npm run build` passes locally.
+- Commit directly on `main`; no feature branches or pull requests. Every push to `main` deploys to production, so commit only when `npm run build` and `npm run check` pass locally.
 - Never commit `dist/`, `.astro/`, `node_modules/`, or `.env*` files.
 - Small, descriptive commits.
