@@ -4,7 +4,7 @@ Guidance for AI coding sessions (Claude Code) working in this repository.
 
 ## Project
 
-Professional website for a freelance senior software engineer. Sweet and simple: a small number of pages, light and to the point. Fully static output, hosted on Cloudflare Pages.
+Professional website for a freelance senior software engineer. Sweet and simple: a small number of pages, light and to the point. Fully static output, hosted on Cloudflare Workers (static assets).
 Priorities, in order: fast load times, strong SEO, clean and maintainable code. Keep it small; do not add sections, pages or features that were not asked for.
 
 ## Tech stack
@@ -75,15 +75,12 @@ The full spec is `docs/design.md`; follow it strictly. Copy lives in `src/data/s
 
 ## Build and deploy
 
-- **Host:** Cloudflare Pages, connected to the private GitHub repo.
-- **Trigger:** every push to `main` builds and deploys to production. Pushes to other branches create preview deployments.
-- **Cloudflare Pages settings:**
-  - Framework preset: Astro
-  - Build command: `npm run build`
-  - Build output directory: `dist`
-  - Node version: taken from `.nvmrc` (or the `NODE_VERSION` environment variable)
+- **Host:** Cloudflare Workers with static assets (Worker `devjasper-nl`), built by Workers Builds from the private GitHub repo. Not Cloudflare Pages.
+- **Trigger:** every push to `main` (the production branch) builds and deploys to production.
+- **Build settings** live in the Cloudflare dashboard (Workers & Pages → `devjasper-nl` → Settings → Build); the repo has no Wrangler config. Check the dashboard before assuming build or deploy commands.
+- **Domain:** `devjasper.nl` is a Worker custom domain. `www` (proxied `AAAA 100::`) and plain `http` are redirected to `https://devjasper.nl` by a Cloudflare Redirect Rule and Always Use HTTPS, configured in the zone, not in this repo.
 - No adapter is needed (pure static). Do not add `@astrojs/cloudflare` unless server-side rendering is explicitly requested.
-- Redirects and headers go in `public/_redirects` and `public/_headers` (Cloudflare Pages format).
+- Redirects and headers go in `public/_redirects` and `public/_headers` (same format as Pages; Workers static assets reads both).
 
 ## Git workflow
 
