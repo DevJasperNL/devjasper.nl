@@ -174,7 +174,10 @@ export const openSource = {
       name: 'Occurify',
       stars,
       body: 'A .NET library for scheduling and transforming timelines. 4500+ unit tests.',
-      links: [{ label: 'github.com/Occurify/Occurify', href: 'https://github.com/Occurify/Occurify' }],
+      links: [
+        { label: 'github.com/Occurify/Occurify', href: 'https://github.com/Occurify/Occurify' },
+        { label: 'DEV.to: Fluent Time Modeling for .NET Developers', href: 'https://dev.to/devjaspernl/occurify-fluent-time-modeling-for-net-developers-3e4n' },
+      ],
     },
     {
       name: 'CodeCasa',
@@ -182,6 +185,8 @@ export const openSource = {
       links: [
         { label: 'github.com/DevJasperNL/CodeCasa', href: 'https://github.com/DevJasperNL/CodeCasa' },
         { label: 'github.com/DevJasperNL/CodeCasa.Showcase', href: 'https://github.com/DevJasperNL/CodeCasa.Showcase' },
+        { label: 'DEV.to: I Retired My Hue Bridge', href: 'https://dev.to/devjaspernl/i-retired-my-hue-bridge-heres-how-i-rebuilt-everything-it-did-and-more-in-c-4178' },
+        { label: 'DEV.to: Supercharging Home Assistant Automations', href: 'https://dev.to/devjaspernl/supercharging-home-assistant-automations-initial-states-and-boolean-logic-for-netdaemon-rx-3bd5' },
       ],
     },
   ] as Project[],
