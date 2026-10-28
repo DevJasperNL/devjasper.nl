@@ -15,7 +15,7 @@ export const seo = {
   title: 'Jasper Lammers | Freelance Senior .NET Engineer',
   description: `Freelance senior .NET engineer, 15 years in logistics, enterprise identity and video streaming. Legacy to modern, hands-on. Available ${availability}.`,
   ogTitle: 'Jasper Lammers, freelance senior .NET engineer',
-  ogDescription: 'Building something new? Stuck with something old? Senior .NET engineer, freelance, 15 years.',
+  ogDescription: 'Building something new? Stuck with something old? Freelance senior .NET engineer, 15 years in.',
 };
 
 export const nav = [
@@ -31,7 +31,7 @@ export const hero = {
   role: 'Senior .NET engineer',
   headline: ['Building something new?', 'Stuck with something old?'],
   intro:
-    'Yes, I can help. Senior .NET engineer, freelance, 15 years. I get up to speed fast, build alongside your team, and make sure the knowledge stays when I go.',
+    'Yes, I can help. Freelance senior .NET engineer, 15 years in. I get up to speed fast, build alongside your team, and make sure the knowledge stays when I go.',
   photoAlt: 'Jasper Lammers, smiling, in a blue blazer',
 };
 

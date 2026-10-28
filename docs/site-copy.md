@@ -10,7 +10,7 @@ Hi, I'm Jasper.
 
 **Headline:** Building something new? Stuck with something old?
 
-Yes, I can help. Senior .NET engineer, freelance, 15 years. I get up to speed fast, build alongside your team, and make sure the knowledge stays when I go.
+Yes, I can help. Freelance senior .NET engineer, 15 years in. I get up to speed fast, build alongside your team, and make sure the knowledge stays when I go.
 
 Available from {availability}
 
@@ -120,7 +120,7 @@ LinkedIn · GitHub
 - Page title: Jasper Lammers | Freelance Senior .NET Engineer
 - Meta description: Freelance senior .NET engineer, 15 years in logistics, enterprise identity and video streaming. Legacy to modern, hands-on. Available {availability}.
 - OG title: Jasper Lammers, freelance senior .NET engineer
-- OG description: Building something new? Stuck with something old? Senior .NET engineer, freelance, 15 years.
+- OG description: Building something new? Stuck with something old? Freelance senior .NET engineer, 15 years in.
 - Photo alt: Jasper Lammers, smiling, in a blue blazer
 - Footer: © {year} Jasper Lammers · jasper@devjasper.nl · LinkedIn · GitHub · No cookies, no trackers. · KvK 86591800
 - 404 title: Page not found | Jasper Lammers
