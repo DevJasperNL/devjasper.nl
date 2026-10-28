@@ -26,7 +26,7 @@ What they worry about, and what answers it:
 - **Differentiators (own these two):**
   1. **Fast ramp-up** in complex domains, from legacy to the newest stack.
   2. **Builds open source:** verifiable craftsmanship (Occurify, CodeCasa, NetDaemon contributions).
-- **AI:** not a headline and not a section. One or two lines in "How I work": uses AI coding tools (Claude Code) daily to deliver faster and can teach a team effective AI-assisted workflows. No claims about building AI features.
+- **AI:** not a headline and not a section. One line in "How I work": uses AI coding tools with judgment, where they help, and owns every line shipped. Generic wording, no vendor name. No claims about building AI features.
 - **Contrast with Rob Ramaekers (overlapping profile):** Rob sells architect and team lead in Dutch. Jasper is an English, hands-on, personal engineer with public code.
 
 ## 4. Proof points

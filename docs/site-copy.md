@@ -82,7 +82,7 @@ Clear docs, careful reviews, and time for the developers who stay. When I leave,
 **I build what you need**
 I lay out options with pros and cons and pick the simplest one that holds. Then I help build it.
 
-I use Claude Code every day to deliver faster, and I can help your team do the same without the hype.
+I use AI coding tools where they help and put them down where they don't. Either way, I understand and own every line I ship.
 
 Off the clock: I've made games since primary school, I go bouldering, train calisthenics and did my first hut-to-hut hike in the Alps. I write about philosophy, and if you want to talk about why people do what they do, I'm always up for that conversation.
 

@@ -155,7 +155,7 @@ export const howIWork = {
       body: 'I lay out options with pros and cons and pick the simplest one that holds. Then I help build it.',
     },
   ] as Point[],
-  ai: 'I use Claude Code every day to deliver faster, and I can help your team do the same without the hype.',
+  ai: "I use AI coding tools where they help and put them down where they don't. Either way, I understand and own every line I ship.",
   personal: [
     { text: 'Off the clock', href: 'https://jasperlammers.com/' },
     { text: ": I've made games since primary school, I go bouldering, train calisthenics and did my first hut-to-hut hike in the Alps. " },
