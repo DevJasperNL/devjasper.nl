@@ -156,8 +156,12 @@ export const howIWork = {
     },
   ] as Point[],
   ai: 'I use Claude Code every day to deliver faster, and I can help your team do the same without the hype.',
-  personal:
-    "Off the clock: I've made games since primary school, I go bouldering, I write about philosophy, and if you challenge me to a board game, I won't say no.",
+  personal: [
+    { text: 'Off the clock', href: 'https://jasperlammers.com/' },
+    { text: ": I've made games since primary school, I go bouldering, " },
+    { text: 'I write about philosophy', href: 'https://jasperlammers.com/essays/' },
+    { text: ", and if you challenge me to a board game, I won't say no." },
+  ] as { text: string; href?: string }[],
 };
 
 export interface Project {

@@ -10,7 +10,11 @@ import SectionHeading from './SectionHeading.astro';
     <PointGrid points={howIWork.points} />
     <div class="reveal mt-14 max-w-3xl space-y-5 text-lg leading-relaxed md:text-xl">
       <p class="font-semibold">{howIWork.ai}</p>
-      <p class="text-muted">{howIWork.personal}</p>
+      <p class="text-muted">
+        {howIWork.personal.map((part) =>
+          part.href ? <a href={part.href} class="underline decoration-2 underline-offset-4 hover:text-accent">{part.text}</a> : part.text,
+        )}
+      </p>
     </div>
   </div>
 </section>
