@@ -84,7 +84,7 @@ I lay out options with pros and cons and pick the simplest one that holds. Then 
 
 I use Claude Code every day to deliver faster, and I can help your team do the same without the hype.
 
-Off the clock: I've made games since primary school, I go bouldering, I write about philosophy, and if you challenge me to a board game, I won't say no.
+Off the clock: I've made games since primary school, I go bouldering, train calisthenics and did my first hut-to-hut hike in the Alps. I write about philosophy, and if you want to talk about why people do what they do, I'm always up for that conversation.
 
 ## 6. Open source
 

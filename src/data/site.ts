@@ -158,9 +158,9 @@ export const howIWork = {
   ai: 'I use Claude Code every day to deliver faster, and I can help your team do the same without the hype.',
   personal: [
     { text: 'Off the clock', href: 'https://jasperlammers.com/' },
-    { text: ": I've made games since primary school, I go bouldering, " },
+    { text: ": I've made games since primary school, I go bouldering, train calisthenics and did my first hut-to-hut hike in the Alps. " },
     { text: 'I write about philosophy', href: 'https://jasperlammers.com/essays/' },
-    { text: ", and if you challenge me to a board game, I won't say no." },
+    { text: ", and if you want to talk about why people do what they do, I'm always up for that conversation." },
   ] as { text: string; href?: string }[],
 };
 

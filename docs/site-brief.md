@@ -58,7 +58,7 @@ One page. Plus a 404 page. No privacy page needed if analytics stays cookieless.
 | 2 | What I do | Three short points: the kinds of problems Jasper solves and the stack, in context. |
 | 3 | Selected work | The 3 highlights, each with an abstract visual; earlier clients as a name list. |
 | 4 | What colleagues say | 3 to 4 named quotes. |
-| 5 | How I work | Ramp-up, knowledge transfer, pragmatism, one line on AI workflows. Answers the three worries. Ends with one personal line (games since primary school, bouldering, board games, philosophy). |
+| 5 | How I work | Ramp-up, knowledge transfer, pragmatism, one line on AI workflows. Answers the three worries. Ends with one personal line (games since primary school, bouldering, calisthenics, hut-to-hut hiking, philosophy, conversations about psychology). |
 | 6 | Open source | Occurify and CodeCasa (and NetDaemon contributions). Proof of craft. |
 | 7 | Contact | Email (as button and plain text), "Request a CV tailored to your assignment", LinkedIn, GitHub. |
 
